@@ -40,23 +40,15 @@ public class ClientRepositoryMock implements IClientRepository {
             throw new NullPointerException();
         }
         clients.remove(client.getId());
-            
     }
 
     @Override
     public Client getById(int id) {
-        Client client = clients.get(id);
-        return client;
+        return clients.get(id);
     }
 
     @Override
     public Iterable<Client> getAll() {
-        List<Client> clients =  new ArrayList<>();
-        for (Client client:
-             clients) {
-            clients.add(client);
-        }
-
-        return clients;
+        return new ArrayList<>(clients.values());
     }
 }
