@@ -1,6 +1,8 @@
 package interfaces;
 
+import models.Article;
 import models.DetailOrder;
+import models.Order;
 
 public interface IDetailOrderRepository {
     void add(DetailOrder detailOrder);
@@ -13,7 +15,7 @@ public interface IDetailOrderRepository {
 
     Iterable<DetailOrder> getAll();
 
-    Iterable<DetailOrder> getAllByOrder();
+    Iterable<DetailOrder> getAllByOrder(Order order);
 
-    Iterable<DetailOrder> getAllByObject();
+    Iterable<DetailOrder> getAllByArticle(Article article);
 }

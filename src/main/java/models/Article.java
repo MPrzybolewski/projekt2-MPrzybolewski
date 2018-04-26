@@ -1,6 +1,6 @@
 package models;
 
-public class Object {
+public class Article {
     int id;
     String name;
     double price;  

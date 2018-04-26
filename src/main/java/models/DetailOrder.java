@@ -1,20 +1,20 @@
 package models;
 
 public class DetailOrder {
-    int objectId;
+    int articleId;
     int orderId;
 
-    public DetailOrder(int objectId, int orderId) {
-        this.objectId = objectId;
+    public DetailOrder(int articleId, int orderId) {
+        this.articleId = articleId;
         this.orderId = orderId;
     }
 
     public int getObjectId() {
-        return objectId;
+        return articleId;
     }
 
     public void setObjectId(int objectId) {
-        this.objectId = objectId;
+        this.articleId = objectId;
     }
 
     public int getOrderId() {
