@@ -1,10 +1,10 @@
 package models;
 
-public class order {
+public class Order {
     int id;
     int clientId;
 
-    public order(int id, int clientId) {
+    public Order(int id, int clientId) {
         this.id = id;
         this.clientId = clientId;
     }

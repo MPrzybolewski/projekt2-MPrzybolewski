@@ -1,19 +1,19 @@
 package models;
 
-public class client {
+public class Client {
     int id;
     String firstName;
     String secondName;
     String email;
 
-    public client(int id, String firstName, String secondName, String email) {
+    public Client(int id, String firstName, String secondName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
         this.email = email;
     }
 
-    public client(int id) {
+    public Client(int id) {
         this.id = id;
     }
 

@@ -1,10 +1,10 @@
 package models;
 
-public class detailOrder {
+public class DetailOrder {
     int objectId;
     int orderId;
 
-    public detailOrder(int objectId, int orderId) {
+    public DetailOrder(int objectId, int orderId) {
         this.objectId = objectId;
         this.orderId = orderId;
     }
