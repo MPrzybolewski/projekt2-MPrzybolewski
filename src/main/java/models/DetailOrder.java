@@ -9,11 +9,11 @@ public class DetailOrder {
         this.orderId = orderId;
     }
 
-    public int getObjectId() {
+    public int getArticleId() {
         return articleId;
     }
 
-    public void setObjectId(int objectId) {
+    public void setArticleId(int objectId) {
         this.articleId = objectId;
     }
 
