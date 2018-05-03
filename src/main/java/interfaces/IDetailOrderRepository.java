@@ -4,6 +4,8 @@ import models.Article;
 import models.DetailOrder;
 import models.Order;
 
+import java.util.List;
+
 public interface IDetailOrderRepository {
     boolean add(DetailOrder detailOrder);
 
@@ -13,9 +15,9 @@ public interface IDetailOrderRepository {
 
     DetailOrder getById(int id);
 
-    Iterable<DetailOrder> getAll();
+    List<DetailOrder> getAll();
 
-    Iterable<DetailOrder> getAllByOrder(Order order);
+    List<DetailOrder> getAllByOrder(Order order);
 
-    Iterable<DetailOrder> getAllByArticle(Article article);
+    List<DetailOrder> getAllByArticle(Article article);
 }
