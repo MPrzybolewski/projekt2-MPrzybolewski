@@ -3,11 +3,11 @@ package interfaces;
 import models.Client;
 
 public interface IClientRepository {
-    void add(Client client);
+    boolean add(Client client);
 
-    void update(Client client);
+    boolean update(Client client);
 
-    void delete(Client client);
+    boolean delete(Client client);
 
     Client getById(int id);
 
