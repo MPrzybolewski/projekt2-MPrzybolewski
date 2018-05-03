@@ -3,11 +3,11 @@ package interfaces;
 import models.Article;
 
 public interface IArticleRepository {
-    void add(Article object);
+    boolean add(Article object);
 
-    void update(Article object);
+    boolean update(Article object);
 
-    void delete(Article object);
+    boolean delete(Article object);
 
     Article getById(int id);
 

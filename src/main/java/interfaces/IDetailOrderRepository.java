@@ -5,11 +5,11 @@ import models.DetailOrder;
 import models.Order;
 
 public interface IDetailOrderRepository {
-    void add(DetailOrder detailOrder);
+    boolean add(DetailOrder detailOrder);
 
-    void update(DetailOrder detailOrder);
+    boolean update(DetailOrder detailOrder);
 
-    void delete(DetailOrder detailOrder);
+    boolean delete(DetailOrder detailOrder);
 
     DetailOrder getById(int id);
 
