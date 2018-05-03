@@ -3,6 +3,8 @@ package interfaces;
 import models.Client;
 import models.Order;
 
+import java.util.List;
+
 public interface IOrderRepository {
     boolean add(Order order);
 
@@ -12,7 +14,7 @@ public interface IOrderRepository {
 
     Order getById(int id);
 
-    Iterable<Order> getAll();
+    List<Order> getAll();
 
-    Iterable<Order> getAllByClient(Client clinet);
+    List<Order> getAllByClient(Client clinet);
 }

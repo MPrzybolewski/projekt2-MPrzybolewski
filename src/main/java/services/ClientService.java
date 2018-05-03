@@ -17,8 +17,11 @@ public class ClientService {
     }
 
     public boolean addClient(Client client){
+        if(client == null){
+            throw new IllegalArgumentException("client is null");
+        }
 
-        if(!ifOperationCanBeExecuted(client)){
+        if(!clientValidator.isClientValid(client)){
             return false;
         }
 
@@ -26,9 +29,8 @@ public class ClientService {
     }
 
     public boolean updateClient(Client client){
-
-        if(!ifOperationCanBeExecuted(client)){
-            return false;
+        if(client == null){
+            throw new IllegalArgumentException("client is null");
         }
 
         if(!clientValidator.isClientValid(client)){
@@ -39,27 +41,15 @@ public class ClientService {
     }
 
     public boolean deleteClient(Client client){
-
-        if(!ifOperationCanBeExecuted(client)){
-            return false;
+        if(client == null){
+            throw new IllegalArgumentException("client is null");
         }
 
-        if(!clientValidator.isClientValid(client)){
+        if(!orderRepository.getAllByClient(client).isEmpty()){
             return false;
         }
 
         return clientRepository.delete(client);
     }
 
-    private boolean ifOperationCanBeExecuted(Client client){
-        if(client == null){
-            throw new IllegalArgumentException("client is null");
-        }
-
-        if(!clientValidator.isClientValid(client)){
-            return false;
-        }
-
-        return true;
-    }
 }

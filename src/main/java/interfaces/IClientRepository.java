@@ -2,6 +2,8 @@ package interfaces;
 
 import models.Client;
 
+import java.util.List;
+
 public interface IClientRepository {
     boolean add(Client client);
 
@@ -11,5 +13,5 @@ public interface IClientRepository {
 
     Client getById(int id);
 
-    Iterable<Client> getAll();
+    List<Client> getAll();
 }
