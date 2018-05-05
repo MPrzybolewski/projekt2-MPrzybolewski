@@ -4,6 +4,7 @@ import interfaces.IArticleRepository;
 import interfaces.IDetailOrderRepository;
 import interfaces.IOrderRepository;
 import models.Article;
+import models.Client;
 import models.DetailOrder;
 import models.Order;
 
@@ -70,5 +71,29 @@ public class OrderService {
         }
 
         return  totalPrice;
+    }
+
+    public boolean addOrder(Order order){
+        if(order == null){
+            throw new IllegalArgumentException("order is null");
+        }
+
+        return orderRepository.add(order);
+    }
+
+    public boolean updateOrder(Order order){
+        if(order == null){
+            throw new IllegalArgumentException("order is null");
+        }
+
+        return orderRepository.update(order);
+    }
+
+    public boolean deleteOrder(Order order){
+        if(order == null){
+            throw new IllegalArgumentException("order is null");
+        }
+
+        return orderRepository.delete(order);
     }
 }
