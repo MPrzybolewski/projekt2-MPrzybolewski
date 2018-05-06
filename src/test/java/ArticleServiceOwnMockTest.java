@@ -8,7 +8,7 @@ import services.ArticleService;
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class ArticleServiceOwnMock {
+public class ArticleServiceOwnMockTest {
 
     private IArticleRepository articleRepository;
     private IArticleValidator articleValidator;
