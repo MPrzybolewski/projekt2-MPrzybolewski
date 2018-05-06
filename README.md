@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.com/MPrzybolewski/projekt2-MPrzybolewski.svg?branch=master)](https://travis-ci.com/MPrzybolewski/projekt2-MPrzybolewski)
+
+[![BCH compliance](https://bettercodehub.com/edge/badge/MPrzybolewski/projekt2-MPrzybolewski?branch=master)](https://bettercodehub.com/)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/7d09a0ef1d62193f6ed6/maintainability)](https://codeclimate.com/github/MPrzybolewski/projekt2-MPrzybolewski/maintainability)
+
 # Testowanie aplikacji JAVA 2017-2018
 ## Projekt 2 (Maven, JUnit oraz atrapy) 
 
