@@ -4,6 +4,9 @@ import interfaces.IClientRepository;
 import interfaces.IClientValidator;
 import interfaces.IOrderRepository;
 import models.Client;
+import models.Order;
+
+import java.util.List;
 
 public class ClientService {
     private IClientRepository clientRepository;
@@ -37,6 +40,10 @@ public class ClientService {
             return false;
         }
 
+        if(clientRepository.getById(client.getId()) == null){
+            return false;
+        }
+
         return clientRepository.update(client);
     }
 
@@ -45,11 +52,16 @@ public class ClientService {
             throw new IllegalArgumentException("client is null");
         }
 
-        if(!orderRepository.getAllByClient(client).isEmpty()){
+        if(clientRepository.getById(client.getId()) == null){
             return false;
         }
 
+        if(!orderRepository.getAllByClient(client).isEmpty()){
+            return false;
+        }
         return clientRepository.delete(client);
     }
+
+
 
 }

@@ -24,7 +24,7 @@ public class OrderService {
 
     public boolean addAritcleToOrder(Article article, Order order){
         if(article == null || order == null){
-            return false;
+            throw new IllegalArgumentException("article or order is null");
         }
 
         if(!detailOrderRepository.getAllByArticle(article).isEmpty()){
@@ -37,7 +37,7 @@ public class OrderService {
 
     public boolean removeArticleFromOrder(Article article, Order order){
         if(article == null || order == null){
-            return false;
+            throw new IllegalArgumentException("article or order is null");
         }
 
         if(detailOrderRepository.getAllByArticle(article).isEmpty()){
@@ -52,25 +52,6 @@ public class OrderService {
         }
 
         return true;
-    }
-
-    public double getTotalPrice(Order order){
-        if(order == null){
-            throw new IllegalArgumentException("order is null");
-        }
-        List<DetailOrder> allDetailOrders = detailOrderRepository.getAllByOrder(order);
-        List<Article> allArticles = new ArrayList<>();
-
-        for(DetailOrder detailOrder : allDetailOrders){
-            allArticles.add(articleRepository.getById(detailOrder.getArticleId()));
-        }
-
-        double totalPrice = 0;
-        for(Article article : allArticles){
-            totalPrice += article.getPrice();
-        }
-
-        return  totalPrice;
     }
 
     public boolean addOrder(Order order){
@@ -95,5 +76,15 @@ public class OrderService {
         }
 
         return orderRepository.delete(order);
+    }
+
+
+    public List<Order> getAllByClients(Client client){
+        if(client == null){
+            throw new IllegalArgumentException("order is null");
+        }
+
+        return orderRepository.getAllByClient(client);
+
     }
 }
