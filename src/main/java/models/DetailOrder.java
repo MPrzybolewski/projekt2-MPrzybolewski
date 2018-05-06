@@ -13,15 +13,4 @@ public class DetailOrder {
         return articleId;
     }
 
-    public void setArticleId(int objectId) {
-        this.articleId = objectId;
-    }
-
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
 }
