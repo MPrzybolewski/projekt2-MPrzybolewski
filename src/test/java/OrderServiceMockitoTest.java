@@ -79,7 +79,15 @@ public class OrderServiceMockitoTest {
 
     @Test
     void removeArticleFromOrderShouldThrowWhenArticleAndOrderIsNull(){
-        assertThrows(IllegalArgumentException.class, () -> orderService.removeArticleFromOrder(null, null), "article or order is null");
+        assertThrows(IllegalArgumentException.class, () -> orderService.removeArticleFromOrder(null, null), "article is null");
+    }
+
+    @Test
+    void removeArticleFromOrderShouldThrowWhenOrderIsNull(){
+        Order order = new Order(1,1);
+        Article article = new Article(1,"test",1);
+
+        assertThrows(IllegalArgumentException.class, () -> orderService.removeArticleFromOrder(article, null), "order is null");
     }
 
     @Test

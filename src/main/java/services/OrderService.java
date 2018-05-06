@@ -36,8 +36,12 @@ public class OrderService {
     }
 
     public boolean removeArticleFromOrder(Article article, Order order){
-        if(article == null || order == null){
-            throw new IllegalArgumentException("article or order is null");
+        if(article == null){
+            throw new IllegalArgumentException("article is null");
+        }
+
+        if(order == null){
+            throw new IllegalArgumentException("order is null");
         }
 
         if(detailOrderRepository.getAllByArticle(article).isEmpty()){
