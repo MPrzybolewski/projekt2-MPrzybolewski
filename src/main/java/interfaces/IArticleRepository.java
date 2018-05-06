@@ -2,6 +2,8 @@ package interfaces;
 
 import models.Article;
 
+import java.util.List;
+
 public interface IArticleRepository {
     boolean add(Article object);
 
@@ -11,5 +13,5 @@ public interface IArticleRepository {
 
     Article getById(int id);
 
-    Iterable<Article> getAll();
+    List<Article> getAll();
 }

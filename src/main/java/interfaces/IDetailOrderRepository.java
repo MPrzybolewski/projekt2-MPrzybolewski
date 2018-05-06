@@ -13,8 +13,6 @@ public interface IDetailOrderRepository {
 
     boolean delete(DetailOrder detailOrder);
 
-    DetailOrder getById(int id);
-
     List<DetailOrder> getAll();
 
     List<DetailOrder> getAllByOrder(Order order);

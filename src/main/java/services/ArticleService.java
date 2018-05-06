@@ -2,6 +2,10 @@ package services;
 
 import interfaces.*;
 import models.Article;
+import models.Client;
+import models.Order;
+
+import java.util.List;
 
 public class ArticleService {
     private IArticleRepository articleRepository;
@@ -37,6 +41,10 @@ public class ArticleService {
             return false;
         }
 
+        if(articleRepository.getById(article.getId()) == null){
+            return false;
+        }
+
         return articleRepository.update(article);
     }
 
@@ -46,10 +54,16 @@ public class ArticleService {
             throw new IllegalArgumentException("article is null");
         }
 
+        if(articleRepository.getById(article.getId()) == null){
+            return false;
+        }
+
         if(!detailOrderRepository.getAllByArticle(article).isEmpty()){
             return false;
         }
 
         return articleRepository.delete(article);
     }
+
+
 }
